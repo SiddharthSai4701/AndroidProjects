@@ -81,7 +81,7 @@
                 android:textSize="13sp"
                 android:textStyle="italic"
                 android:id="@+id/author"
-                android:textColor="@color/purple_200"
+                android:textColor="@color/app_blue"
                 android:padding="5dp">
 
             </TextView>
@@ -91,7 +91,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/time"
                 android:padding="5dp"
-                android:textColor="@color/black"
+                android:textColor="@color/app_blue"
                 android:text="Published At"
                 android:textStyle="bold"
                 android:textSize="12sp">

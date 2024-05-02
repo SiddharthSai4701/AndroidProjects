@@ -48,16 +48,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 // We need to open the URL in a new activity which is the webview activity
                 // We get the URL from modelClassArrayList
                 // get(position) because we want to pass the specific URL on which the user clicks
+                // The name 'url' will be used in the webView.java class
                 intent.putExtra("url", modelClassArrayList.get(position).getUrl());
 
                 context.startActivity(intent);
             }
         });
+        String testText;
+        testText = modelClassArrayList.get(position).getAuthor();
 
         holder.time.setText("Published At: " + modelClassArrayList.get(position).getPublishedAt());
-        holder.author.setText("Published At: " + modelClassArrayList.get(position).getAuthor());
-        holder.heading.setText("Published At: " + modelClassArrayList.get(position).getTitle());
-        holder.content.setText("Published At: " + modelClassArrayList.get(position).getDescription());
+        if(testText == null) {
+            holder.author.setText("");
+        }
+        else {
+            holder.author.setText("Author: " + modelClassArrayList.get(position).getAuthor());
+        }
+
+        holder.heading.setText(modelClassArrayList.get(position).getTitle());
+        holder.content.setText(modelClassArrayList.get(position).getDescription());
         Glide.with(context).load(modelClassArrayList.get(position).getUrlToImage()).into(holder.imageView);
 
     }
